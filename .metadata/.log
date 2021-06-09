@@ -282,3 +282,9 @@ org.eclipse.core.runtime.CoreException: Executable extension definition for "cla
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
 !SUBENTRY 1 org.eclipse.equinox.registry 4 1 2021-06-09 15:00:34.946
 !MESSAGE Executable extension definition for "class" not found.
+
+!ENTRY org.eclipse.ui 2 2 2021-06-09 15:08:32.857
+!MESSAGE Invalid property category path: Test Category (bundle: org.eclipse.ui.tests, propertyPage: org.eclipse.ui.tests.and)
+
+!ENTRY org.eclipse.ui 2 2 2021-06-09 15:08:32.858
+!MESSAGE Invalid property category path: Test Category (bundle: org.eclipse.ui.tests, propertyPage: org.eclipse.ui.tests.or)
