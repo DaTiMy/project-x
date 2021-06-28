@@ -8,6 +8,7 @@ public class Zelle {
 
     public Zelle(boolean isSpezialFeld) {
     	setId(temp++);
+    	this.isSpezialFeld = isSpezialFeld;
 
     }
 
