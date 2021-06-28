@@ -6,16 +6,15 @@ public class Main {
 
 	public static void main(String[] args) {
 		Spielbrett spielbrett = new Spielbrett();
-		spielbrett.setSpielfeld();
-		
-		ArrayList<Zelle> spf = spielbrett.getSpielfeld();
+		ArrayList<Zelle> spielfeld = spielbrett.getSpielfeld();
+		ArrayList<Integer> schlangen = spielbrett.getSchlangen();
+		ArrayList<Integer> leitern = spielbrett.getLeitern();	
 
-		for(int i = 0; i<= 49;i++)
+		for(int i = 0; i < 50;i++)
 		{
-			System.out.println(spf.get(i).getId());
-
+			System.out.println(spielfeld.get(i).getId());
 		}
-		if()
+
 	}
 }
 

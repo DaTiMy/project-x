@@ -4,22 +4,33 @@ import java.util.ArrayList;
 
 public class Spielbrett {
 
-	private ArrayList<Zelle> spielfeld = new ArrayList<Zelle>();
-	private ArrayList<Integer> schlangen = new ArrayList<Integer>();
-	private ArrayList<Integer> leitern = new ArrayList<Integer>();	
-
+	private ArrayList<Zelle> spielfeld;
+	private ArrayList<Integer> schlangen;
+	private ArrayList<Integer> leitern;	
+	
+	public Spielbrett() {
+		
+		spielfeld = new ArrayList<Zelle>();
+		schlangen = new ArrayList<Integer>();
+		leitern = new ArrayList<Integer>();	
+		spielbrettFuellen();
+	}
+	
 	public ArrayList<Zelle> getSpielfeld() {
 		return spielfeld;
 	}
-	
-	
-	
 
-	public void setSpielfeld() {
-		
+	public ArrayList<Integer> getSchlangen() {
+		return schlangen;
+	}
+
+	public ArrayList<Integer> getLeitern() {
+		return leitern;
+	}
+
+	public void spielbrettFuellen() {
 		for(int i = 0; i <= 49; i++)
 		{
-			
 			switch(i)
 			{
 				case 6:
@@ -59,7 +70,6 @@ public class Spielbrett {
 					break;
 			}
 		}
-		
 	}
 
 
