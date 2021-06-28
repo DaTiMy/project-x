@@ -39,5 +39,4 @@ public class Spieler {
 		this.spielerPosition = this.spielerPosition + wuerfeln();
 		
 	}
-	
 }
