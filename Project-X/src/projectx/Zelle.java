@@ -2,31 +2,35 @@ package projectx;
 
 public class Zelle {
 
-	private boolean isSpezialFeld;
-	private static int temp = 0;
-	private int id;
-	
-	public Zelle(int id, boolean isSpezialFeld) {
-		
-		
-	}
+    private boolean isSpezialFeld;
+    private static int temp = 0;
+    private int id;
 
-	public boolean isSpezialFeld() {
-		return isSpezialFeld;
-	}
+    public Zelle(boolean isSpezialFeld) {
+    	setId(temp++);
 
-	public void setSpezialFeld(boolean isSpezialFeld) {
-		this.isSpezialFeld = isSpezialFeld;
-	}
+    }
 
-	public int getId() {
-		return id;
-	}
+    public boolean isSpezialFeld() {
+        return isSpezialFeld;
+    }
 
-	public void setId(int id) {
-		this.id = id;
-	}
-	
-	
-	
+    public void setSpezialFeld(boolean isSpezialFeld) {
+        this.isSpezialFeld = isSpezialFeld;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public static int getTemp() {
+        return temp;
+    }
+
+
+
 }
