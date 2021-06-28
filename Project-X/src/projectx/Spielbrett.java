@@ -3,6 +3,7 @@ package projectx;
 public class Spielbrett {
 
 	private Zelle[] spielfeld = new Zelle[50];
+	private Schlange[] schlangen = new Schlange[4];
 
 	public Spielbrett() {
 
@@ -11,6 +12,9 @@ public class Spielbrett {
 	public Zelle[] getSpielfeld() {
 		return spielfeld;
 	}
+	
+	
+	
 
 	public void setSpielfeld() {
 		
@@ -48,6 +52,8 @@ public class Spielbrett {
 					break;
 			}
 		}
+		
+		
 	}
 
 

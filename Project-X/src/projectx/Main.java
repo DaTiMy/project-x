@@ -6,11 +6,17 @@ public class Main {
 	Spielbrett spielbrett = new Spielbrett();
 	
 	spielbrett.setSpielfeld();
+	
 	for(int i = 0; i<= 49;i++)
 	{
 		System.out.println(spielbrett.getSpielfeld()[i].getId());
+		
 	}
-
+	if(spielbrett.getSpielfeld()[16].isSpezialFeld())
+	{
+		
+	}
+	
 	}
 
 }
