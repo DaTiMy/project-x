@@ -36,7 +36,7 @@ public class Spieler {
 	
 	public void setNewSpielerPosition()
 	{
-		
 		this.spielerPosition = this.spielerPosition + wuerfeln();
+		
 	}
 }

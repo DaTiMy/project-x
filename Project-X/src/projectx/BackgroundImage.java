@@ -1,19 +1,15 @@
 package projectx;
 
-import java.awt.*;
+import javax.swing.*;
 
-import javax.swing.JComponent;
+public class BackgroundImage extends JLabel {
 
-public class BackgroundImage extends JComponent {
+	public BackgroundImage() {
 
-	private Image bgIgmage;
-    public BackgroundImage(Image image) {
-        this.bgIgmage = image;
-    }
-    @Override
-    protected void paintComponent(Graphics g) {
-        super.paintComponent(g);
-        g.drawImage(bgIgmage, 0, 0, this);
-    }
-	
+		this.setBounds(0, 0, 800, 800);
+		ImageIcon img = new ImageIcon("project-x/Project-X/img/bg.jpg");
+		this.setIcon(img);
+
+	}
+
 }

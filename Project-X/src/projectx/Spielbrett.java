@@ -1,15 +1,14 @@
 package projectx;
 
+import java.util.ArrayList;
+
 public class Spielbrett {
 
-	private Zelle[] spielfeld = new Zelle[50];
-	private Schlange[] schlangen = new Schlange[4];
+	private ArrayList<Zelle> spielfeld = new ArrayList<Zelle>();
+	private ArrayList<Integer> schlangen = new ArrayList<Integer>();
+	private ArrayList<Integer> leitern = new ArrayList<Integer>();	
 
-	public Spielbrett() {
-
-	}
-
-	public Zelle[] getSpielfeld() {
+	public ArrayList<Zelle> getSpielfeld() {
 		return spielfeld;
 	}
 	
@@ -24,35 +23,42 @@ public class Spielbrett {
 			switch(i)
 			{
 				case 6:
-					this.spielfeld[i] = new Leiter(14,true);
+					this.spielfeld.add(new Leiter(14,true));
+					leitern.add(this.spielfeld.get(i).getId());
 					break;
 				case 16:
-					this.spielfeld[i] = new Schlange(3,true);
+					this.spielfeld.add(new Schlange(3,true));
+					schlangen.add(this.spielfeld.get(i).getId());
 					break;
 				case 17:
-					this.spielfeld[i] = new Leiter(23,true);
+					this.spielfeld.add(new Leiter(23,true));
+					leitern.add(this.spielfeld.get(i).getId());
 					break;
 				case 27:
-					this.spielfeld[i] = new Leiter(33,true);
+					this.spielfeld.add(new Leiter(33,true));
+					leitern.add(this.spielfeld.get(i).getId());
 					break;
 				case 29:
-					this.spielfeld[i] = new Schlange(10,true);
+					this.spielfeld.add(new Schlange(10,true));
+					schlangen.add(this.spielfeld.get(i).getId());
 					break;
 				case 38:
-					this.spielfeld[i] = new Leiter(43, true);
+					this.spielfeld.add(new Leiter(43, true));
+					leitern.add(this.spielfeld.get(i).getId());
 					break;
 				case 39:
-					this.spielfeld[i] = new Schlange(20, true);
+					this.spielfeld.add(new Schlange(20, true));
+					schlangen.add(this.spielfeld.get(i).getId());
 					break;
 				case 45:
-					this.spielfeld[i] = new Schlange(34,true);
+					this.spielfeld.add(new Schlange(34,true));
+					schlangen.add(this.spielfeld.get(i).getId());
 					break;
 				default:
-					this.spielfeld[i] = new Zelle(false);
+					this.spielfeld.add(new Zelle(false));
 					break;
 			}
 		}
-		
 		
 	}
 

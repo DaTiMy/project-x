@@ -1,22 +1,21 @@
 package projectx;
 
+import java.util.ArrayList;
+
 public class Main {
 
 	public static void main(String[] args) {
-	Spielbrett spielbrett = new Spielbrett();
-	
-	spielbrett.setSpielfeld();
-	
-	for(int i = 0; i<= 49;i++)
-	{
-		System.out.println(spielbrett.getSpielfeld()[i].getId());
+		Spielbrett spielbrett = new Spielbrett();
+		spielbrett.setSpielfeld();
 		
-	}
-	if(spielbrett.getSpielfeld()[16].isSpezialFeld())
-	{
-		
-	}
-	
-	}
+		ArrayList<Zelle> spf = spielbrett.getSpielfeld();
 
+		for(int i = 0; i<= 49;i++)
+		{
+			System.out.println(spf.get(i).getId());
+
+		}
+		if()
+	}
 }
+
