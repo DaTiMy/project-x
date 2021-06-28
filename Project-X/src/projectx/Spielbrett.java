@@ -2,7 +2,7 @@ package projectx;
 
 public class Spielbrett {
 
-	private Zelle[] spielfeld = new Zelle[49];
+	private Zelle[] spielfeld = new Zelle[50];
 
 	public Spielbrett() {
 
@@ -14,9 +14,9 @@ public class Spielbrett {
 
 	public void setSpielfeld() {
 		
-		for(int i = 0; i <= 50; i++)
+		for(int i = 0; i <= 49; i++)
 		{
-			this.spielfeld[i] = new Zelle(false);
+			
 			switch(i)
 			{
 				case 6:
@@ -42,6 +42,9 @@ public class Spielbrett {
 					break;
 				case 45:
 					this.spielfeld[i] = new Schlange(34,true);
+					break;
+				default:
+					this.spielfeld[i] = new Zelle(false);
 					break;
 			}
 		}
