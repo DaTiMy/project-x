@@ -26,6 +26,10 @@ public class Zelle {
 	public void setId(int id) {
 		this.id = id;
 	}
+
+	public static int getTemp() {
+		return temp;
+	}
 	
 	
 	
