@@ -1,15 +1,33 @@
 package projectx;
 
 import javax.swing.*;
+import java.awt.*;
+class BackgroundImage extends JFrame
+{
+    JButton b1;
+    JLabel l1;
 
-public class BackgroundImage extends JLabel {
+    public BackgroundImage()
+    {
+        this.setTitle("Background Color for JFrame");
+        this.setBounds(0, 0, 800, 800);
+        this.setLayout(new BorderLayout());
+        this.setDefaultCloseOperation(EXIT_ON_CLOSE);
+        this.setVisible(true);
+        
+    	JPanel panel = new JPanel();
+    	panel.setSize(800,800);
+    	JLabel background=new JLabel(new ImageIcon("C:/Users/Janik/Documents/GitHub/project-x/Project-X/bg.png"));
+    	background.setLayout(new FlowLayout());
+        panel.add(background);
+        
+        this.add(panel);
+        this.pack();
 
-	public BackgroundImage() {
+    }
 
-		this.setBounds(0, 0, 800, 800);
-		ImageIcon img = new ImageIcon("project-x/Project-X/img/bg.jpg");
-		this.setIcon(img);
-
-	}
-
-}
+    public static void main(String args[])
+    {
+        new BackgroundImage();
+    }
+} 
