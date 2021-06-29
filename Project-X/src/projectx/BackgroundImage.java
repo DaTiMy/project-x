@@ -1,33 +1,33 @@
 package projectx;
 
-import javax.swing.*;
-import java.awt.*;
-class BackgroundImage extends JFrame
+import java.awt.FlowLayout;
+import java.awt.image.BufferedImage;
+import java.io.IOException;
+
+import javax.imageio.ImageIO;
+import javax.swing.BorderFactory;
+import javax.swing.ImageIcon;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+class BackgroundImage
 {
-    JButton b1;
-    JLabel l1;
-
-    public BackgroundImage()
+	JPanel panel;
+	BufferedImage myPicture;
+	JLabel background;
+	
+    public BackgroundImage() 
     {
-        this.setTitle("Background Color for JFrame");
-        this.setBounds(0, 0, 800, 800);
-        this.setLayout(new BorderLayout());
-        this.setDefaultCloseOperation(EXIT_ON_CLOSE);
-        this.setVisible(true);
         
-    	JPanel panel = new JPanel();
-    	panel.setSize(800,800);
-    	JLabel background=new JLabel(new ImageIcon("C:/Users/Janik/Documents/GitHub/project-x/Project-X/bg.png"));
-    	background.setLayout(new FlowLayout());
+        panel = new JPanel();
+        panel.setLayout(new FlowLayout());
+        panel.setBorder(BorderFactory.createLoweredBevelBorder());
+		try {
+			myPicture = ImageIO.read(this.getClass().getResource("bg.png"));
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+    	background = new JLabel(new ImageIcon(myPicture));
         panel.add(background);
-        
-        this.add(panel);
-        this.pack();
 
-    }
-
-    public static void main(String args[])
-    {
-        new BackgroundImage();
     }
 } 
