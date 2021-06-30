@@ -22,19 +22,19 @@ public class GUI extends JFrame{
 	public static JLabel rank4;
 	public static JLabel rank5;
 	public static JLabel wuerfel;
-	public static JLabel player;
-	private JLabel label;
-	public static JLabel player1;
-	public static JLabel player2;
-	public static JLabel player3;
-	public static JLabel player4;
-	public static JLabel player5;
+
+	public static JLabel player1 = new JLabel();
+	public static JLabel player2 = new JLabel();
+	public static JLabel player3 = new JLabel();
+	public static JLabel player4 = new JLabel();
+	public static JLabel player5 = new JLabel();
 
 	public GUI() {
 		setSize(750, 750);
 		setTitle("Snakes & Ladders");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setVisible(true);
+		setResizable(false);
 
 		layeredPane = new JLayeredPane();
 		getContentPane().add(layeredPane, BorderLayout.CENTER);
@@ -89,38 +89,80 @@ public class GUI extends JFrame{
 		layeredPane.setLayer(wuerfel, 2);
 		wuerfel.setBounds(440, 500, 200, 200);
 		layeredPane.add(wuerfel);
-			
-		instPlayerLabel(player1, "/view/player_red.png");
-		instPlayerLabel(player2, "/view/player_blue.png");
-		
-
-		player = new JLabel();
+		addPlayers();
+		/*player = new JLabel();
 
         player.setIcon(new ImageIcon(GUI.class.getResource("/view/player_red.png")));
         player.setBounds(110,390,20,20);
         layeredPane.setLayer(player, 2);
         
-        label = new JLabel("New label");
-        label.setBounds(151, 58, 45, 13);
-        layeredPane.add(label);
-        layeredPane.add(player,2);
-      
-        player1.setIcon(new ImageIcon(GUI.class.getResource("/view/player_red.png")));
-        player1.setBounds(170,390,20,20);
-        layeredPane.setLayer(player1, 2);
-        layeredPane.add(player1,2);
-        wuerfel = new JLabel("");
+        layeredPane.add(player,2);*/
+		
+
+  
 	}
 	
 	public void addMyListener(Controller controller) {
 		wuerfel.addMouseListener(controller);
     }
 	
-	public void instPlayerLabel(JLabel l, String imgPath) {
+	public void instPlayerLabel(JLabel l, String imgPath, int ID) {
 		l.setIcon(new ImageIcon(GUI.class.getResource(imgPath)));
-        l.setBounds(170,390,20,20);
+		l.setText(l.getName());
+		int x = 110, y= 390;
+		switch(ID)
+		{
+			case 1:
+				break;
+			case 2:
+				x = x-20;
+				y = y+20;
+				break;
+			case 3:
+				y = y+20;
+				break;
+			case 4:
+				x = x-20;
+				break;
+			case 5:
+				x = x+20;
+				y = y+20;
+				break;
+			
+			
+		}
+        l.setBounds(x,y,20,20);
         layeredPane.setLayer(l, 2);
         layeredPane.add(l,2);
+        
+        
+	}
+	
+	public void addPlayers() {
+		
+		switch(SpielSetup.getPlayerNo()) {
+		case 1: instPlayerLabel(player1, "/view/player_red.png",1);
+				break;
+		case 2: instPlayerLabel(player1, "/view/player_red.png",1);
+				instPlayerLabel(player2, "/view/player_blue.png",2);
+				break;
+		case 3: instPlayerLabel(player1, "/view/player_red.png",1);
+				instPlayerLabel(player2, "/view/player_blue.png",2);
+				instPlayerLabel(player3, "/view/player_green.png",3);
+				break;
+		case 4: instPlayerLabel(player1, "/view/player_red.png",1);
+				instPlayerLabel(player2, "/view/player_blue.png",2);
+				instPlayerLabel(player3, "/view/player_green.png",3);
+				instPlayerLabel(player4, "/view/player_yellow.png",4);
+				break;
+		case 5: instPlayerLabel(player1, "/view/player_red.png",1);
+				instPlayerLabel(player2, "/view/player_blue.png",2);
+				instPlayerLabel(player3, "/view/player_green.png",3);
+				instPlayerLabel(player4, "/view/player_yellow.png",4);
+				instPlayerLabel(player5, "/view/player_pink.png",5);
+				break;
+		}
+		
 	}
 
 }

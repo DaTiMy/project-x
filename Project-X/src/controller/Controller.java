@@ -17,21 +17,48 @@ public class Controller implements MouseListener{
     public Controller() {
         view = new GUI();
         view.addMyListener(this);
+      
+        
     }
 
     @Override
 	public void mouseClicked(MouseEvent e) {
 
-		Main.spielzug(0);
+  
+		Main.spielzug(Main.getCurr());
 		
-		System.out.println(Main.getCurr().getSpielerPosition());
+		if(Main.counter == Main.spielerListe.length)
+		{
+			Main.counter = 0;
+		}
+
 		
-		int[] coords = move(Main.getCurr().getSpielerPosition());
+		int[] coords = move(Main.getCurr().getSpielerPosition(), Main.counter);
 		System.out.println(coords[0]+" "+coords[1]);
-		GUI.player.setBounds(coords[0],coords[1],20,20);
+		switch(Main.counter)
+		{
+		case 0: 
+			GUI.player1.setBounds(coords[0],coords[1],20,20);
+			break;
+		case 1: 
+			GUI.player2.setBounds(coords[0],coords[1],20,20);
+			break;
+		case 2: 
+			GUI.player3.setBounds(coords[0],coords[1],20,20);
+			break;
+		case 3: 
+			GUI.player4.setBounds(coords[0],coords[1],20,20);
+			break;
+		case 4: 
+			GUI.player5.setBounds(coords[0],coords[1],20,20);
+			break;
+		}
+		Main.counter++;
+	
+		
 	}
     
-	public int[] move(int id)
+	public int[] move(int id, int pID)
 	{
 		int x = 0;
 		int y = 0;
@@ -244,6 +271,27 @@ public class Controller implements MouseListener{
 			x = xcoords[49];
 			y = ycoords[49];
 			break;
+			
+		}
+		switch(pID)
+		{
+			case 1:
+				break;
+			case 2:
+				x = x-10;
+				y = y+10;
+				break;
+			case 3:
+				y = y+10;
+				break;
+			case 4:
+				x = x-10;
+				break;
+			case 5:
+				x = x+10;
+				y = y+10;
+				break;
+			
 			
 		}
 		int[] coords = {x,y};

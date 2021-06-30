@@ -10,16 +10,11 @@ public class Wuerfel {
 
 	Random rnd = new Random();
 
-	public Wuerfel() {
-
-
-
-	}
 
 	public int neuerWurf() {
 
 		int x = rnd.nextInt(5)+1;
-		System.out.println(x);
+	
 
 		switch(x) {
 

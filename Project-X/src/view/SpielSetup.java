@@ -36,7 +36,7 @@ public class SpielSetup extends JFrame {
 	JPanel panel = new JPanel();
 	JPanel panel2 = new JPanel();
 	
-	ButtonGroup spieleranzahl = new ButtonGroup();
+	static ButtonGroup spieleranzahl = new ButtonGroup();
 	
 	public SpielSetup() {
 		
@@ -63,7 +63,8 @@ public class SpielSetup extends JFrame {
 		confirm.setBounds(0,0,20,20);
 		confirm.addActionListener(new ActionListener() { 
 			  public void actionPerformed(ActionEvent e) { 
-				  new Main(getPlayerNo());
+				  new Controller();
+				  dispose();
 				  
 				  } 
 				} );
@@ -71,10 +72,10 @@ public class SpielSetup extends JFrame {
 		panel2.add(panel);
 		panel2.add(confirm);
 		
-		this.setLayout(new BorderLayout());
+		getContentPane().setLayout(new BorderLayout());
 		
-		this.add(panel2);
-		this.setSize(400,400);
+		getContentPane().add(panel2);
+		this.setSize(397,325);
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		this.setVisible(true);
 		this.pack();
@@ -86,26 +87,10 @@ public class SpielSetup extends JFrame {
 		
 	}
 	
-	public int getPlayerNo()
+	public static int getPlayerNo()
 	{
-		 if (spieleranzahl.getSelection().getActionCommand() != null) {
-			 
-			 try{
-		            int playerNo = Integer.parseInt(spieleranzahl.getSelection().getActionCommand());
-		            return playerNo;
-		            
-		          
-		        }
-		        catch (NumberFormatException ex){
-		            ex.printStackTrace();
-		        }
-             
-         }	
-		 else {
-			 int playerNo = 1;
-			 return playerNo;
-		 }
-		return 1;
+		
+		return 5;
 		
 	}
 	

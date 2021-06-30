@@ -1,71 +1,68 @@
 package main;
 
 import java.util.ArrayList;
-import java.util.Scanner;
 
 import controller.Controller;
-import view.GUI;
+import view.SpielSetup;
 
 
 public class Main {
 
-    static Spieler[] spielerListe;
+    public static Spieler[] spielerListe;
     static Spielbrett spielbrett = new Spielbrett();
     static ArrayList<Zelle> spielfeld = spielbrett.getSpielfeld();
     static ArrayList<Integer> schlangen = spielbrett.getSchlangen();
     static ArrayList<Integer> leitern = spielbrett.getLeitern();
     static boolean spielBeendet = false;
     static Spieler currPlayer;
+    public static int counter =0;
     
-    public Main(int spielerAnzahl){
-    	spielerListe = new Spieler[spielerAnzahl];
-    	   new Controller();
-    }
+	
 
     public static void main(String[] args) {
 
-        int anzahl = getSpielerListe().length;
-        
-        
+
+    	
+    	
+    	SpielSetup setup = new SpielSetup();
+    	
+    	int pNumber = setup.getPlayerNo();
+    
+    		spielerListe = new Spieler[pNumber];
+        	
+
+            for(int i = 0; i < getSpielerListe().length; i++)
+            {
+
+            String name = "Tim";
+       
+            int posi = 0;
+            getSpielerListe()[i] = spielerErstellung(posi,name);
+            }
+           
+          
+            currPlayer = spielerListe[counter];
+            
+            
+
      
 
-        for(int i = 0; i < getSpielerListe().length; i++)
-        {
 
-        String name = "Tim";
-        
-        int posi = 0;
-        getSpielerListe()[i] = spielerErstellung(posi,name);
-        }
-        boolean game = true;
-       while(game)
-       {
+    	
+    	
 
-
-          for(int i = 0; i < spielerListe.length; i++)
-         {
-               currPlayer = spielerListe[i];
-         
-          }
-  for(int i = 0; i < getSpielerListe().length; i++)
-            {
-                currPlayer = getSpielerListe()[i];
-                    spielzug(i);
-            }
-
-
-
-      }
+      
 
 
     }
 
     
-    public static void spielzug(int i) {
-    	getSpielerListe()[i].setNewSpielerPosition();
-        checkFeld(getSpielerListe()[i]);
+    public static void spielzug(Spieler s) {
+  
+    	s.setNewSpielerPosition();
+        checkFeld(s);
 
-    System.out.println(getSpielerListe()[i].getSpielerName() + " "+ getSpielerListe()[i].getSpielerPosition());
+    System.out.println(s.getSpielerName() + " "+ s.getSpielerPosition());
     }
     public static Spieler spielerErstellung(int pos,String spielerName)
     {
