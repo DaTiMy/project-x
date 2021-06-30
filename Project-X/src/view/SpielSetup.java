@@ -3,6 +3,8 @@ package view;
 import java.awt.BorderLayout;
 import java.awt.FlowLayout;
 import java.awt.GridLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 import javax.swing.ButtonGroup;
 import javax.swing.JButton;
@@ -11,14 +13,17 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JRadioButton;
 
+import controller.Controller;
+import main.Main;
+
 
 public class SpielSetup extends JFrame {
 	
-	JRadioButton spieler1 = new JRadioButton();
-	JRadioButton spieler2 = new JRadioButton();
-	JRadioButton spieler3 = new JRadioButton();
-	JRadioButton spieler4 = new JRadioButton();
-	JRadioButton spieler5 = new JRadioButton();
+	JRadioButton spieler1 = new JRadioButton("1");
+	JRadioButton spieler2 = new JRadioButton("2");
+	JRadioButton spieler3 = new JRadioButton("3");
+	JRadioButton spieler4 = new JRadioButton("4");
+	JRadioButton spieler5 = new JRadioButton("5");
 	
 	JButton confirm = new JButton("Confirm");
 	
@@ -56,6 +61,12 @@ public class SpielSetup extends JFrame {
 		panel.add(sp5);
 		
 		confirm.setBounds(0,0,20,20);
+		confirm.addActionListener(new ActionListener() { 
+			  public void actionPerformed(ActionEvent e) { 
+				  new Main(getPlayerNo());
+				  
+				  } 
+				} );
 		panel2.setLayout(new FlowLayout());
 		panel2.add(panel);
 		panel2.add(confirm);
@@ -72,6 +83,29 @@ public class SpielSetup extends JFrame {
 	public static void main(String args[]) {
 		
 		new SpielSetup();
+		
+	}
+	
+	public int getPlayerNo()
+	{
+		 if (spieleranzahl.getSelection().getActionCommand() != null) {
+			 
+			 try{
+		            int playerNo = Integer.parseInt(spieleranzahl.getSelection().getActionCommand());
+		            return playerNo;
+		            
+		          
+		        }
+		        catch (NumberFormatException ex){
+		            ex.printStackTrace();
+		        }
+             
+         }	
+		 else {
+			 int playerNo = 1;
+			 return playerNo;
+		 }
+		return 1;
 		
 	}
 	

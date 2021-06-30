@@ -16,13 +16,18 @@ public class Main {
     static ArrayList<Integer> leitern = spielbrett.getLeitern();
     static boolean spielBeendet = false;
     static Spieler currPlayer;
+    
+    public Main(int spielerAnzahl){
+    	spielerListe = new Spieler[spielerAnzahl];
+    	   new Controller();
+    }
 
     public static void main(String[] args) {
 
-        int anzahl = 1;
-        spielerListe = new Spieler[anzahl];
+        int anzahl = getSpielerListe().length;
         
-        new Controller();
+        
+     
 
         for(int i = 0; i < getSpielerListe().length; i++)
         {
