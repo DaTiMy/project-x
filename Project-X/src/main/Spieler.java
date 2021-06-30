@@ -1,7 +1,5 @@
 package main;
 
-import java.util.Random;
-
 public class Spieler {
 	private int spielerPosition;
 	private String spielerName;

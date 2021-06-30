@@ -1,10 +1,8 @@
 package main;
 
 import java.util.ArrayList;
-import java.util.Scanner;
 
 import controller.Controller;
-import view.GUI;
 
 
 public class Main {
@@ -25,9 +23,6 @@ public class Main {
     public static void main(String[] args) {
 
         int anzahl = getSpielerListe().length;
-        
-        
-     
 
         for(int i = 0; i < getSpielerListe().length; i++)
         {
