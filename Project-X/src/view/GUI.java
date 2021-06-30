@@ -1,24 +1,93 @@
 package view;
 
-import javax.swing.JFrame;
-import javax.swing.JLayeredPane;
 import java.awt.BorderLayout;
-import javax.swing.JLabel;
+import java.awt.Dimension;
+import java.awt.Font;
+
 import javax.swing.ImageIcon;
-import java.awt.FlowLayout;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JLayeredPane;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 
 public class GUI extends JFrame{
 
-	public GUI() {
-		
-		JLayeredPane layeredPane = new JLayeredPane();
-		getContentPane().add(layeredPane, BorderLayout.NORTH);
-		layeredPane.setLayout(new BorderLayout(0, 0));
-		
-		JLabel lblNewLabel = new JLabel("");
-		layeredPane.setLayer(lblNewLabel, 1);
-		lblNewLabel.setIcon(new ImageIcon(GUI.class.getResource("/view/bg.png")));
-		layeredPane.add(lblNewLabel, BorderLayout.CENTER);
+	JLayeredPane layeredPane;
+	JLabel BG;
+	JLabel Rangliste;
+	JLabel lblNewLabel;
+	JLabel lblNewLabel_1;
+	JLabel lblNewLabel_2;
+	JLabel lblNewLabel_3;
+	JLabel lblNewLabel_4;
+	public static JLabel wuerfel;
 
+	public GUI() {
+
+		layeredPane = new JLayeredPane();
+		getContentPane().add(layeredPane, BorderLayout.CENTER);
+		layeredPane.setLayout(null);
+
+		BG = new JLabel("");
+		BG.setBounds(0, 0, 736, 713);
+		layeredPane.setLayer(BG, 1);
+		BG.setIcon(new ImageIcon(GUI.class.getResource("/view/bg.png")));
+		layeredPane.add(BG);
+
+		Rangliste = new JLabel("Rangliste");
+		Rangliste.setFont(new Font("Tahoma", Font.BOLD, 36));
+		Rangliste.setPreferredSize(new Dimension(45, 22));
+		Rangliste.setBounds(40, 500, 250, 40);
+		layeredPane.setLayer(Rangliste, 2);
+		layeredPane.add(Rangliste);
+
+		lblNewLabel = new JLabel("1.\r\n");
+		lblNewLabel.setFont(new Font("Tahoma", Font.BOLD, 24));
+		layeredPane.setLayer(lblNewLabel, 2);
+		lblNewLabel.setBounds(40, 550, 250, 25);
+		layeredPane.add(lblNewLabel);
+
+		lblNewLabel_1 = new JLabel("2.\r\n");
+		lblNewLabel_1.setFont(new Font("Tahoma", Font.BOLD, 24));
+		layeredPane.setLayer(lblNewLabel_1, 2);
+		lblNewLabel_1.setBounds(40, 575, 250, 25);
+		layeredPane.add(lblNewLabel_1);
+
+		lblNewLabel_2 = new JLabel("3.\r\n");
+		lblNewLabel_2.setFont(new Font("Tahoma", Font.BOLD, 24));
+		layeredPane.setLayer(lblNewLabel_2, 2);
+		lblNewLabel_2.setBounds(40, 600, 250, 25);
+		layeredPane.add(lblNewLabel_2);
+
+		lblNewLabel_3 = new JLabel("4.\r\n");
+		lblNewLabel_3.setFont(new Font("Tahoma", Font.BOLD, 24));
+		layeredPane.setLayer(lblNewLabel_3, 2);
+		lblNewLabel_3.setBounds(40, 625, 250, 25);
+		layeredPane.add(lblNewLabel_3);
+
+		lblNewLabel_4 = new JLabel("5.");
+		lblNewLabel_4.setFont(new Font("Tahoma", Font.BOLD, 24));
+		layeredPane.setLayer(lblNewLabel_4, 2);
+		lblNewLabel_4.setBounds(40, 650, 250, 25);
+		layeredPane.add(lblNewLabel_4);
+
+		wuerfel = new JLabel("");
+		wuerfel.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+
+			}
+		});
+		wuerfel.setIcon(new ImageIcon(GUI.class.getResource("/view/6.png")));
+		layeredPane.setLayer(wuerfel, 2);
+		wuerfel.setBounds(440, 500, 200, 200);
+		layeredPane.add(wuerfel);
+
+	}
+	
+	public JLabel getWuerfel() {
+		
+		return this.wuerfel;
 	}
 }
