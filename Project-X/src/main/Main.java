@@ -14,7 +14,7 @@ public class Main {
     static ArrayList<Integer> schlangen = spielbrett.getSchlangen();
     static ArrayList<Integer> leitern = spielbrett.getLeitern();
     static boolean spielBeendet = false;
-    static Spieler currPlayer;
+    public Spieler currPlayer;
     public static int counter =0;
     
 	
@@ -33,15 +33,15 @@ public class Main {
 
             for(int i = 0; i < getSpielerListe().length; i++)
             {
-
-            String name = "Tim";
+            	
+            
        
             int posi = 0;
-            getSpielerListe()[i] = spielerErstellung(posi,name);
+            getSpielerListe()[i] = spielerErstellung(posi);
             }
            
           
-            currPlayer = spielerListe[counter];
+          
             
             
 
@@ -56,17 +56,17 @@ public class Main {
 
     }
 
-    
+   
     public static void spielzug(Spieler s) {
   
     	s.setNewSpielerPosition();
         checkFeld(s);
 
-    System.out.println(s.getSpielerName() + " "+ s.getSpielerPosition());
+  
     }
-    public static Spieler spielerErstellung(int pos,String spielerName)
+    public static Spieler spielerErstellung(int pos)
     {
-        return new Spieler(pos, spielerName);
+        return new Spieler(pos);
     }
     public static void checkFeld(Spieler spieler)
     {
@@ -101,7 +101,9 @@ public class Main {
 
     public static Spieler getCurr() {
 
-        return currPlayer;
+    	if(counter == spielerListe.length)
+    	{counter = 0;}
+        return spielerListe[counter];
     }
 
 

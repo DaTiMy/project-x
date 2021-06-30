@@ -7,9 +7,9 @@ public class Spieler {
 	public Wuerfel w =new Wuerfel();
 	private int ID;
 
-	public Spieler(int spielerPosition, String spielerName) {
+	public Spieler(int spielerPosition) {
 		setSpielerPosition(spielerPosition);
-		setSpielerName(spielerName);
+	
 		this.ID = ++sID;
 	}
 
@@ -46,6 +46,7 @@ public class Spieler {
 
 			Main.spielBeendet = true;
 			System.out.println("Spiel beendet");
+			this.spielerPosition = 50;
 			return;
 		}
 		this.spielerPosition = this.spielerPosition + wurf;

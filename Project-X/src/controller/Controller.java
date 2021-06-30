@@ -31,7 +31,7 @@ public class Controller implements MouseListener{
 		{
 			Main.counter = 0;
 		}
-
+	
 		
 		int[] coords = move(Main.getCurr().getSpielerPosition(), Main.counter);
 		System.out.println(coords[0]+" "+coords[1]);
@@ -53,8 +53,8 @@ public class Controller implements MouseListener{
 			GUI.player5.setBounds(coords[0],coords[1],20,20);
 			break;
 		}
+		
 		Main.counter++;
-	
 		
 	}
     
@@ -268,8 +268,8 @@ public class Controller implements MouseListener{
 			y = ycoords[49];
 			break;
 		default:
-			x = xcoords[49];
-			y = ycoords[49];
+			x = xcoords[50];
+			y = ycoords[50];
 			break;
 			
 		}
