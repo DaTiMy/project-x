@@ -2,7 +2,6 @@ package controller;
 
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
-import java.util.ArrayList;
 
 import main.Main;
 import main.Spieler;
@@ -12,12 +11,9 @@ import view.GUI;
 public class Controller implements MouseListener{
 
 	private GUI view;
-<<<<<<< Updated upstream
 	Wuerfel w = new Wuerfel();
-=======
 	Spieler [] spielerliste = Main.getSpielerListe();
 
->>>>>>> Stashed changes
     public Controller() {
         view = new GUI();
         view.addMyListener(this);

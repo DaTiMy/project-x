@@ -22,16 +22,13 @@ public class GUI extends JFrame{
 	public static JLabel rank4;
 	public static JLabel rank5;
 	public static JLabel wuerfel;
-<<<<<<< Updated upstream
 	public static JLabel player;
 	private JLabel label;
-=======
 	public static JLabel player1;
 	public static JLabel player2;
 	public static JLabel player3;
 	public static JLabel player4;
 	public static JLabel player5;
->>>>>>> Stashed changes
 
 	public GUI() {
 		setSize(750, 750);
@@ -97,7 +94,6 @@ public class GUI extends JFrame{
 		instPlayerLabel(player2, "/view/player_blue.png");
 		
 
-<<<<<<< Updated upstream
 		player = new JLabel();
 
         player.setIcon(new ImageIcon(GUI.class.getResource("/view/player_red.png")));
@@ -109,20 +105,16 @@ public class GUI extends JFrame{
         layeredPane.add(label);
         layeredPane.add(player,2);
       
-=======
         player1.setIcon(new ImageIcon(GUI.class.getResource("/view/player_red.png")));
         player1.setBounds(170,390,20,20);
         layeredPane.setLayer(player1, 2);
         layeredPane.add(player1,2);
         wuerfel = new JLabel("");
->>>>>>> Stashed changes
 	}
 	
 	public void addMyListener(Controller controller) {
 		wuerfel.addMouseListener(controller);
     }
-<<<<<<< Updated upstream
-=======
 	
 	public void instPlayerLabel(JLabel l, String imgPath) {
 		l.setIcon(new ImageIcon(GUI.class.getResource(imgPath)));
@@ -131,5 +123,4 @@ public class GUI extends JFrame{
         layeredPane.add(l,2);
 	}
 
->>>>>>> Stashed changes
 }

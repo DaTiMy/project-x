@@ -36,19 +36,18 @@ public class Main {
        while(game)
        {
 
-<<<<<<< Updated upstream
+
           for(int i = 0; i < spielerListe.length; i++)
          {
                currPlayer = spielerListe[i];
          
           }
-=======
-            for(int i = 0; i < getSpielerListe().length; i++)
+  for(int i = 0; i < getSpielerListe().length; i++)
             {
                 currPlayer = getSpielerListe()[i];
                     spielzug(i);
             }
->>>>>>> Stashed changes
+
 
 
       }
