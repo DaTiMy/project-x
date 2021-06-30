@@ -1,4 +1,4 @@
-package projectx;
+package main;
 
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -11,10 +11,10 @@ public class Main {
     static ArrayList<Zelle> spielfeld = spielbrett.getSpielfeld();
     static ArrayList<Integer> schlangen = spielbrett.getSchlangen();
     static ArrayList<Integer> leitern = spielbrett.getLeitern();
-	
+	static boolean spielBeendet = false;
+    
 	public static void main(String[] args) {
 
-		
 		Scanner sc = new Scanner(System.in);
 		int anzahl = sc.nextInt();
 		spielerListe = new Spieler[anzahl];
@@ -62,7 +62,7 @@ public class Main {
 	}
 	public static void checkFeld(Spieler spieler)
 	{
-	
+		
 		boolean check = spielfeld.get(spieler.getSpielerPosition()).isSpezialFeld();
 
 		if(check)

@@ -1,4 +1,4 @@
-package projectx;
+package main;
 
 public class Leiter extends Zelle{
 

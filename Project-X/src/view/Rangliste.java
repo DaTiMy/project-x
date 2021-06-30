@@ -1,10 +1,12 @@
-package projectx;
+package view;
 
 import java.awt.GridLayout;
 
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+
+import main.Spieler;
 
 public class Rangliste {
 

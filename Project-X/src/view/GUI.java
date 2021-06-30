@@ -1,28 +1,24 @@
-package projectx;
+package view;
 
 import javax.swing.JFrame;
+import javax.swing.JLayeredPane;
+import java.awt.BorderLayout;
+import javax.swing.JLabel;
+import javax.swing.ImageIcon;
+import java.awt.FlowLayout;
 
 public class GUI extends JFrame{
 
 	public GUI() {
 		
-		BackgroundImage img = new BackgroundImage();
+		JLayeredPane layeredPane = new JLayeredPane();
+		getContentPane().add(layeredPane, BorderLayout.NORTH);
+		layeredPane.setLayout(new BorderLayout(0, 0));
 		
-		this.add(img.background);
-		this.setTitle("Snakes and Ladders");
-		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		this.setSize(getPreferredSize());
-		this.setLocationRelativeTo(null);
-		this.setVisible(true);
-		this.setResizable(false);
-		this.setAlwaysOnTop(true);
-		
+		JLabel lblNewLabel = new JLabel("");
+		layeredPane.setLayer(lblNewLabel, 1);
+		lblNewLabel.setIcon(new ImageIcon(GUI.class.getResource("/view/bg.png")));
+		layeredPane.add(lblNewLabel, BorderLayout.CENTER);
+
 	}
-	
-	public static void main(String args[]) {
-		
-		new GUI();
-		
-	}
-	
 }
