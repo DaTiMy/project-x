@@ -29,9 +29,7 @@ public class Spieler {
 
 	public int wuerfeln()
 	{
-		Random rn = new Random();
-
-		return rn.nextInt(5)+1;
+		return new Wuerfel().neuerWurf();
 	}
 
 	public void setNewSpielerPosition()

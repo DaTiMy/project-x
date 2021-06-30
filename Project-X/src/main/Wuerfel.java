@@ -16,7 +16,7 @@ public class Wuerfel {
 
 	}
 
-	public void neuerWurf() {
+	public int neuerWurf() {
 
 		int x = rnd.nextInt(5)+1;
 
@@ -35,8 +35,9 @@ public class Wuerfel {
 		case 6: GUI.wuerfel.setIcon(new ImageIcon(GUI.class.getResource("/view/6.png")));
 		break;
 
-
 		}
+		
+		return x;
 	}
 
 }

@@ -3,6 +3,8 @@ package main;
 import java.util.ArrayList;
 import java.util.Scanner;
 
+import view.GUI;
+
 
 public class Main {
 
@@ -16,48 +18,41 @@ public class Main {
 
     public static void main(String[] args) {
 
-        Scanner sc = new Scanner(System.in);
-        int anzahl = sc.nextInt();
+        int anzahl = 1;
         spielerListe = new Spieler[anzahl];
-
+        new GUI();
 
         for(int i = 0; i < spielerListe.length; i++)
         {
 
-        System.out.println("Name:");
-        String name = sc.next();
-
+        String name = "Tim";
+        
         int posi = 0;
         spielerListe[i] = spielerErstellung(posi,name);
         }
         boolean game = true;
-        int eingabe = 0;
         while(game)
         {
 
             for(int i = 0; i < spielerListe.length; i++)
             {
                 currPlayer = spielerListe[i];
-                eingabe = sc.nextInt();
-                if(eingabe == 1)
-                {
-                    spielerListe[i].setNewSpielerPosition();
-                    checkFeld(spielerListe[i]);
-                }
-
-                System.out.println(spielerListe[i].getSpielerName() + " "+ spielerListe[i].getSpielerPosition());
+                    spielzug(i);
             }
 
 
         }
 
 
-
-
-
-
     }
 
+    
+    public static void spielzug(int i) {
+    	spielerListe[i].setNewSpielerPosition();
+        checkFeld(spielerListe[i]);
+
+    System.out.println(spielerListe[i].getSpielerName() + " "+ spielerListe[i].getSpielerPosition());
+    }
     public static Spieler spielerErstellung(int pos,String spielerName)
     {
         return new Spieler(pos, spielerName);

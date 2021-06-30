@@ -1,18 +1,15 @@
 package view;
 
-import main.Wuerfel;
-
 import java.awt.BorderLayout;
-import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Font;
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
 
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JLayeredPane;
+
+import controller.Controller;
 
 public class GUI extends JFrame{
 
@@ -25,6 +22,7 @@ public class GUI extends JFrame{
 	JLabel lblNewLabel_3;
 	JLabel lblNewLabel_4;
 	public static JLabel wuerfel;
+	public static JLabel player;
 
 	public GUI() {
 		setSize(750, 750);
@@ -80,18 +78,23 @@ public class GUI extends JFrame{
 		layeredPane.add(lblNewLabel_4);
 
 		wuerfel = new JLabel("");
-		wuerfel.addMouseListener(new MouseAdapter() {
-			@Override
-			public void mouseClicked(MouseEvent e) {
-				Wuerfel w = new Wuerfel();
-				w.neuerWurf();
-			}
-		});
+		
 		wuerfel.setIcon(new ImageIcon(GUI.class.getResource("/view/6.png")));
 		layeredPane.setLayer(wuerfel, 2);
 		wuerfel.setBounds(440, 500, 200, 200);
 		layeredPane.add(wuerfel);
 
+		player = new JLabel();
+
+        player.setIcon(new ImageIcon(GUI.class.getResource("/view/player_red.png")));
+        player.setBounds(170,390,20,20);
+        layeredPane.setLayer(player, 2);
+        layeredPane.add(player,2);
+        wuerfel = new JLabel("");
 	}
+	
+	public void addMyListener(Controller controller) {
+		wuerfel.addMouseListener(controller);
+    }
 
 }

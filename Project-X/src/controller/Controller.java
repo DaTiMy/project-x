@@ -1,12 +1,10 @@
 package controller;
 
-import java.awt.event.ActionEvent;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 
-import main.Wuerfel;
 import main.Main;
-import main.Spieler;
+import main.Wuerfel;
 import view.GUI;
 
 public class Controller implements MouseListener{
@@ -18,44 +16,13 @@ public class Controller implements MouseListener{
         view.addMyListener(this);
     }
 
-    public void actionPerformed(ActionEvent e) {
-
-
-    }
-
     @Override
-    public void mouseClicked(MouseEvent e) {
-        new Wuerfel().neuerWurf();
-        Spieler temp = Main.getCurr();
-        int q = temp.getSpielerPosition();
-        int[] bounds = move(q);
-        GUI.player.setBounds(bounds[0], bounds[1],20,20);
-
-    }
-
-    @Override
-    public void mousePressed(MouseEvent e) {
-
-
-    }
-
-    @Override
-    public void mouseReleased(MouseEvent e) {
-
-
-    }
-
-    @Override
-    public void mouseEntered(MouseEvent e) {
-
-
-    }
-
-    @Override
-    public void mouseExited(MouseEvent e) {
-
-
-    }
+	public void mouseClicked(MouseEvent e) {
+		Wuerfel w = new Wuerfel();
+		Main.spielzug(Main.getCurr().getSpielerPosition());
+		w.neuerWurf();
+	}
+    
 	public int[] move(int id)
 	{
 		int x = 0;
@@ -269,5 +236,29 @@ public class Controller implements MouseListener{
 		}
 		int[] coords = {x,y};
 		return coords;
+	}
+
+	@Override
+	public void mousePressed(MouseEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void mouseReleased(MouseEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void mouseEntered(MouseEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void mouseExited(MouseEvent e) {
+		// TODO Auto-generated method stub
+		
 	}
 }
