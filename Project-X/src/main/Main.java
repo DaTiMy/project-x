@@ -3,6 +3,7 @@ package main;
 import java.util.ArrayList;
 import java.util.Scanner;
 
+import controller.Controller;
 import view.GUI;
 
 
@@ -20,7 +21,8 @@ public class Main {
 
         int anzahl = 1;
         spielerListe = new Spieler[anzahl];
-        new GUI();
+        
+        new Controller();
 
         for(int i = 0; i < spielerListe.length; i++)
         {
@@ -31,17 +33,17 @@ public class Main {
         spielerListe[i] = spielerErstellung(posi,name);
         }
         boolean game = true;
-        while(game)
-        {
+       while(game)
+       {
 
-            for(int i = 0; i < spielerListe.length; i++)
-            {
-                currPlayer = spielerListe[i];
-                    spielzug(i);
-            }
+          for(int i = 0; i < spielerListe.length; i++)
+         {
+               currPlayer = spielerListe[i];
+         
+          }
 
 
-        }
+      }
 
 
     }

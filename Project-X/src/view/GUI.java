@@ -23,6 +23,7 @@ public class GUI extends JFrame{
 	JLabel lblNewLabel_4;
 	public static JLabel wuerfel;
 	public static JLabel player;
+	private JLabel label;
 
 	public GUI() {
 		setSize(750, 750);
@@ -35,7 +36,7 @@ public class GUI extends JFrame{
 		layeredPane.setLayout(null);
 
 		BG = new JLabel("");
-		BG.setBounds(0, 0, 736, 713);
+		BG.setBounds(0, 10, 736, 713);
 		layeredPane.setLayer(BG, 1);
 		BG.setIcon(new ImageIcon(GUI.class.getResource("/view/bg.png")));
 		layeredPane.add(BG);
@@ -87,14 +88,17 @@ public class GUI extends JFrame{
 		player = new JLabel();
 
         player.setIcon(new ImageIcon(GUI.class.getResource("/view/player_red.png")));
-        player.setBounds(170,390,20,20);
+        player.setBounds(110,390,20,20);
         layeredPane.setLayer(player, 2);
+        
+        label = new JLabel("New label");
+        label.setBounds(151, 58, 45, 13);
+        layeredPane.add(label);
         layeredPane.add(player,2);
-        wuerfel = new JLabel("");
+      
 	}
 	
 	public void addMyListener(Controller controller) {
 		wuerfel.addMouseListener(controller);
     }
-
 }

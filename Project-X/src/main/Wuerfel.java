@@ -12,13 +12,14 @@ public class Wuerfel {
 
 	public Wuerfel() {
 
-		GUI.wuerfel.setIcon(new ImageIcon(GUI.class.getResource("/view/6.png")));
+
 
 	}
 
 	public int neuerWurf() {
 
 		int x = rnd.nextInt(5)+1;
+		System.out.println(x);
 
 		switch(x) {
 
@@ -34,6 +35,8 @@ public class Wuerfel {
 		break;
 		case 6: GUI.wuerfel.setIcon(new ImageIcon(GUI.class.getResource("/view/6.png")));
 		break;
+		default:
+			break;
 
 		}
 		

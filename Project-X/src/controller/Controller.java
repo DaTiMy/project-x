@@ -10,7 +10,7 @@ import view.GUI;
 public class Controller implements MouseListener{
 
 	private GUI view;
-
+	Wuerfel w = new Wuerfel();
     public Controller() {
         view = new GUI();
         view.addMyListener(this);
@@ -18,17 +18,22 @@ public class Controller implements MouseListener{
 
     @Override
 	public void mouseClicked(MouseEvent e) {
-		Wuerfel w = new Wuerfel();
-		Main.spielzug(Main.getCurr().getSpielerPosition());
-		w.neuerWurf();
+
+		Main.spielzug(0);
+		
+		System.out.println(Main.getCurr().getSpielerPosition());
+		
+		int[] coords = move(Main.getCurr().getSpielerPosition());
+		System.out.println(coords[0]+" "+coords[1]);
+		GUI.player.setBounds(coords[0],coords[1],20,20);
 	}
     
 	public int[] move(int id)
 	{
 		int x = 0;
 		int y = 0;
-		int[] xcoords = {110, 170, 230, 280, 340, 390, 510, 560, 600, 620, 560, 500, 440, 390, 220, 170, 110, 160, 210, 270, 320, 380, 430, 540, 650, 620, 560, 510, 440, 390, 335, 280, 130, 125, 170, 230, 290, 400, 460, 520, 580, 620};
-		int[] ycoords = {390, 390, 390, 400, 400, 400, 400, 400, 380, 300, 300, 300, 300, 300, 300, 300, 230, 210, 210, 210, 210, 210, 210, 220, 160, 140, 130, 130, 125, 125, 130, 130, 125, 50, 40, 40, 40, 40, 40, 40, 40, 40};
+		int[] xcoords = {110, 170, 230, 280, 340, 390,440, 510, 560, 600,650,620,560,500,440,370,370,310,200,150,100,150,210,270,330,380,440,0,550,0,655,620,555,490,440,380,320,260,0,0,100,85,150,220,275,0,390,445,500,560,620};
+		int[] ycoords = {390, 390, 390, 400, 410, 410,415, 415, 400, 390,370,320,300,300,300,310,310,310,310,300,285,220,220,220,220,220,225,0,230,0,220,155,140,135,135,140,145,145,0,0,160,95,60,50,  50, 0,55, 55, 55, 55, 55};
 		
 		switch(id) 
 		{
@@ -229,6 +234,10 @@ public class Controller implements MouseListener{
 			y = ycoords[48];
 			break;
 		case 49:
+			x = xcoords[49];
+			y = ycoords[49];
+			break;
+		default:
 			x = xcoords[49];
 			y = ycoords[49];
 			break;
