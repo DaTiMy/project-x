@@ -1,15 +1,18 @@
 package view;
 
+import main.Wuerfel;
+
 import java.awt.BorderLayout;
+import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Font;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JLayeredPane;
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
 
 public class GUI extends JFrame{
 
@@ -24,6 +27,10 @@ public class GUI extends JFrame{
 	public static JLabel wuerfel;
 
 	public GUI() {
+		setSize(750, 750);
+		setTitle("Snakes & Ladders");
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setVisible(true);
 
 		layeredPane = new JLayeredPane();
 		getContentPane().add(layeredPane, BorderLayout.CENTER);
@@ -76,7 +83,8 @@ public class GUI extends JFrame{
 		wuerfel.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-
+				Wuerfel w = new Wuerfel();
+				w.neuerWurf();
 			}
 		});
 		wuerfel.setIcon(new ImageIcon(GUI.class.getResource("/view/6.png")));
@@ -85,9 +93,5 @@ public class GUI extends JFrame{
 		layeredPane.add(wuerfel);
 
 	}
-	
-	public JLabel getWuerfel() {
-		
-		return this.wuerfel;
-	}
+
 }
