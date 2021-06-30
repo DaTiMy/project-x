@@ -2,15 +2,22 @@ package controller;
 
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
+import java.util.ArrayList;
 
 import main.Main;
+import main.Spieler;
 import main.Wuerfel;
 import view.GUI;
 
 public class Controller implements MouseListener{
 
 	private GUI view;
+<<<<<<< Updated upstream
 	Wuerfel w = new Wuerfel();
+=======
+	Spieler [] spielerliste = Main.getSpielerListe();
+
+>>>>>>> Stashed changes
     public Controller() {
         view = new GUI();
         view.addMyListener(this);
@@ -268,6 +275,12 @@ public class Controller implements MouseListener{
 	@Override
 	public void mouseExited(MouseEvent e) {
 		// TODO Auto-generated method stub
+		
+	}
+	
+	public void ranglisteUpdate() {
+		
+		
 		
 	}
 }

@@ -24,23 +24,31 @@ public class Main {
         
         new Controller();
 
-        for(int i = 0; i < spielerListe.length; i++)
+        for(int i = 0; i < getSpielerListe().length; i++)
         {
 
         String name = "Tim";
         
         int posi = 0;
-        spielerListe[i] = spielerErstellung(posi,name);
+        getSpielerListe()[i] = spielerErstellung(posi,name);
         }
         boolean game = true;
        while(game)
        {
 
+<<<<<<< Updated upstream
           for(int i = 0; i < spielerListe.length; i++)
          {
                currPlayer = spielerListe[i];
          
           }
+=======
+            for(int i = 0; i < getSpielerListe().length; i++)
+            {
+                currPlayer = getSpielerListe()[i];
+                    spielzug(i);
+            }
+>>>>>>> Stashed changes
 
 
       }
@@ -50,10 +58,10 @@ public class Main {
 
     
     public static void spielzug(int i) {
-    	spielerListe[i].setNewSpielerPosition();
-        checkFeld(spielerListe[i]);
+    	getSpielerListe()[i].setNewSpielerPosition();
+        checkFeld(getSpielerListe()[i]);
 
-    System.out.println(spielerListe[i].getSpielerName() + " "+ spielerListe[i].getSpielerPosition());
+    System.out.println(getSpielerListe()[i].getSpielerName() + " "+ getSpielerListe()[i].getSpielerPosition());
     }
     public static Spieler spielerErstellung(int pos,String spielerName)
     {
@@ -94,6 +102,11 @@ public class Main {
 
         return currPlayer;
     }
+
+
+	public static Spieler[] getSpielerListe() {
+		return spielerListe;
+	}
 
 
 }

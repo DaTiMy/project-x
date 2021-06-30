@@ -16,14 +16,22 @@ public class GUI extends JFrame{
 	JLayeredPane layeredPane;
 	JLabel BG;
 	JLabel Rangliste;
-	JLabel lblNewLabel;
-	JLabel lblNewLabel_1;
-	JLabel lblNewLabel_2;
-	JLabel lblNewLabel_3;
-	JLabel lblNewLabel_4;
+	public static JLabel rank1;
+	public static JLabel rank2;
+	public static JLabel rank3;
+	public static JLabel rank4;
+	public static JLabel rank5;
 	public static JLabel wuerfel;
+<<<<<<< Updated upstream
 	public static JLabel player;
 	private JLabel label;
+=======
+	public static JLabel player1;
+	public static JLabel player2;
+	public static JLabel player3;
+	public static JLabel player4;
+	public static JLabel player5;
+>>>>>>> Stashed changes
 
 	public GUI() {
 		setSize(750, 750);
@@ -48,35 +56,35 @@ public class GUI extends JFrame{
 		layeredPane.setLayer(Rangliste, 2);
 		layeredPane.add(Rangliste);
 
-		lblNewLabel = new JLabel("1.\r\n");
-		lblNewLabel.setFont(new Font("Tahoma", Font.BOLD, 24));
-		layeredPane.setLayer(lblNewLabel, 2);
-		lblNewLabel.setBounds(40, 550, 250, 25);
-		layeredPane.add(lblNewLabel);
+		rank1 = new JLabel("1.\r\n");
+		rank1.setFont(new Font("Tahoma", Font.BOLD, 24));
+		layeredPane.setLayer(rank1, 2);
+		rank1.setBounds(40, 550, 250, 25);
+		layeredPane.add(rank1);
 
-		lblNewLabel_1 = new JLabel("2.\r\n");
-		lblNewLabel_1.setFont(new Font("Tahoma", Font.BOLD, 24));
-		layeredPane.setLayer(lblNewLabel_1, 2);
-		lblNewLabel_1.setBounds(40, 575, 250, 25);
-		layeredPane.add(lblNewLabel_1);
+		rank2 = new JLabel("2.\r\n");
+		rank2.setFont(new Font("Tahoma", Font.BOLD, 24));
+		layeredPane.setLayer(rank2, 2);
+		rank2.setBounds(40, 575, 250, 25);
+		layeredPane.add(rank2);
 
-		lblNewLabel_2 = new JLabel("3.\r\n");
-		lblNewLabel_2.setFont(new Font("Tahoma", Font.BOLD, 24));
-		layeredPane.setLayer(lblNewLabel_2, 2);
-		lblNewLabel_2.setBounds(40, 600, 250, 25);
-		layeredPane.add(lblNewLabel_2);
+		rank3 = new JLabel("3.\r\n");
+		rank3.setFont(new Font("Tahoma", Font.BOLD, 24));
+		layeredPane.setLayer(rank3, 2);
+		rank3.setBounds(40, 600, 250, 25);
+		layeredPane.add(rank3);
 
-		lblNewLabel_3 = new JLabel("4.\r\n");
-		lblNewLabel_3.setFont(new Font("Tahoma", Font.BOLD, 24));
-		layeredPane.setLayer(lblNewLabel_3, 2);
-		lblNewLabel_3.setBounds(40, 625, 250, 25);
-		layeredPane.add(lblNewLabel_3);
+		rank4 = new JLabel("4.\r\n");
+		rank4.setFont(new Font("Tahoma", Font.BOLD, 24));
+		layeredPane.setLayer(rank4, 2);
+		rank4.setBounds(40, 625, 250, 25);
+		layeredPane.add(rank4);
 
-		lblNewLabel_4 = new JLabel("5.");
-		lblNewLabel_4.setFont(new Font("Tahoma", Font.BOLD, 24));
-		layeredPane.setLayer(lblNewLabel_4, 2);
-		lblNewLabel_4.setBounds(40, 650, 250, 25);
-		layeredPane.add(lblNewLabel_4);
+		rank5 = new JLabel("5.");
+		rank5.setFont(new Font("Tahoma", Font.BOLD, 24));
+		layeredPane.setLayer(rank5, 2);
+		rank5.setBounds(40, 650, 250, 25);
+		layeredPane.add(rank5);
 
 		wuerfel = new JLabel("");
 		
@@ -84,7 +92,12 @@ public class GUI extends JFrame{
 		layeredPane.setLayer(wuerfel, 2);
 		wuerfel.setBounds(440, 500, 200, 200);
 		layeredPane.add(wuerfel);
+			
+		instPlayerLabel(player1, "/view/player_red.png");
+		instPlayerLabel(player2, "/view/player_blue.png");
+		
 
+<<<<<<< Updated upstream
 		player = new JLabel();
 
         player.setIcon(new ImageIcon(GUI.class.getResource("/view/player_red.png")));
@@ -96,9 +109,27 @@ public class GUI extends JFrame{
         layeredPane.add(label);
         layeredPane.add(player,2);
       
+=======
+        player1.setIcon(new ImageIcon(GUI.class.getResource("/view/player_red.png")));
+        player1.setBounds(170,390,20,20);
+        layeredPane.setLayer(player1, 2);
+        layeredPane.add(player1,2);
+        wuerfel = new JLabel("");
+>>>>>>> Stashed changes
 	}
 	
 	public void addMyListener(Controller controller) {
 		wuerfel.addMouseListener(controller);
     }
+<<<<<<< Updated upstream
+=======
+	
+	public void instPlayerLabel(JLabel l, String imgPath) {
+		l.setIcon(new ImageIcon(GUI.class.getResource(imgPath)));
+        l.setBounds(170,390,20,20);
+        layeredPane.setLayer(l, 2);
+        layeredPane.add(l,2);
+	}
+
+>>>>>>> Stashed changes
 }
